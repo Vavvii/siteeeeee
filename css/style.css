@@ -1,0 +1,169 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+}
+
+/* Стили для шапки */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для основного контента */
+main {
+    padding: 20px;
+}
+
+section#info-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section#info-section h2 {
+    margin-top: 0;
+}
+
+section#info-section p {
+    font-size: 1.1em;
+}
+
+#hide-info-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#hide-info-btn:hover {
+    background-color: #c82333;
+}
+
+/* Стили для товаров */
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#filter-section {
+    margin-bottom: 20px;
+}
+
+#filter-section label {
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+#filter-section input {
+    padding: 5px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+#show-all-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#show-all-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для карточек продуктов */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+#cost {
+    font-weight: bold;
+}
+
+.add-to-cart-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #218838;
+}
+
+/* Стили для футера (если нужен) */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Flower Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/delivery">Информация о доставке</a></li>
+                
+                <% if (user) { %>
+                    <li><a href="/logout">Выход</a></li>
+                <% } else { %>
+                    <li><a href="/login">Войти</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="cart-section">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items">
+                <% cartItems.forEach(item => { %>
+                    <div class="cart-item" data-item-id="<%= item.id %>" data-product-id="<%= item.product_id %>" data-quantity="<%= item.quantity %>">
+                        <p><%= item.product_name %></p>
+                        <p>Price: $<%= item.price %></p>
+                        <p>Quantity: <%= item.quantity %></p>
+                        <button class="remove-item-btn">Удалить</button>
+                    </div>
+                <% }) %>
+            </div>
+            <% if (cartItems.length > 0) { %>
+                <form action="/checkout" method="get">
+                    <button type="submit">Оформить заказ</button>
+                </form>
+            <% } else { %>
+                <p>Ваша корзина пуста.</p>
+            <% } %>
+        </section>
+    </main>
+</body>
+</html>

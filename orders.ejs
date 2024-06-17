@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>My Orders</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/delivery">Информация о доставке</a></li>
+                <% if (user) { %>
+                    <li><a href="/cart">Корзина</a></li>
+                    <li><a href="/orders">Мои заказы</a></li>
+                    <li><a href="/logout">Выход</a></li>
+                <% } else { %>
+                    <li><a href="/login">Войти</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>My Orders</h1>
+        <ul>
+            <% orders.forEach(order => { %>
+                <li>
+                    <strong>Order ID:</strong> <%= order.id %><br>
+                    <strong>Total:</strong> $<%= order.total %><br>
+                    <strong>Status:</strong> <%= order.status %><br>
+                    <strong>Date:</strong> <%= order.created_at %><br>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+    
+</body>
+</html>

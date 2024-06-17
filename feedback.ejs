@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/delivery">Информация о доставке</a></li>
+                <% if (user) { %>
+                    <li><a href="/cart">Корзина</a></li>
+                    <li><a href="/orders">Мои заказы</a></li>
+                    <li><a href="/logout">Выход</a></li>
+                <% } else { %>
+                    <li><a href="/login">Войти</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Обратная связь</h2>
+            <form action="/feedback" method="POST">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+        <% if (success) { %>
+            <section class="feedback-success">
+                <p>Ваш отзыв был успешно отправлен!</p>
+                <a href="/">Вернуться на главную страницу</a>
+            </section>
+        <% } else if (error) { %>
+            <section class="feedback-error">
+                <p>Произошла ошибка при отправке отзыва.</p>
+                <a href="/">Вернуться на главную страницу</a>
+            </section>
+        <% } %>
+    </main>
+</body>
+</html>

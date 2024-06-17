@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о доставке</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Flower Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/delivery">Информация о доставке</a></li>
+                <% if (user) { %>
+                    <li><a href="/cart">Корзина</a></li>
+                    <li><a href="/orders">Мои заказы</a></li>
+                    <li><a href="/logout">Выход</a></li>
+                <% } else { %>
+                    <li><a href="/login">Войти</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="delivery-info">
+            <h2>Информация о доставке</h2>
+            <p>Мы доставляем цветы по всей России.</p>
+            <p>Скидка 20 % при заказе от 3000 рублей.</p>
+        </section>
+    </main>
+</body>
+</html>

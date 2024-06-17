@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Flower Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/delivery">Информация о доставке</a></li>
+                <% if (user) { %>
+                    <li><a href="/cart">Корзина</a></li>
+                    <li><a href="/orders">Мои заказы</a></li>
+                    <li><a href="/logout">Выход</a></li>
+                <% } else { %>
+                    <li><a href="/login">Войти</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="info-section">
+            <h2>О магазине цветов</h2>
+            <p>Добро пожаловать в наш магазин цветов! Мы рады предложить вам широкий ассортимент свежих и красивых цветов для любого случая. Наш магазин работает с любовью и заботой о каждом клиенте, чтобы вы всегда могли найти идеальный букет для своих нужд.</p>
+            <button id="hide-info-btn">Hide</button>
+        </section>
+        <section>
+            <h2>Наш товар</h2>
+            <div id="filter-section">
+                <label for="filter">Фильтровать по названию:</label>
+                <input type="text" id="filter" >
+                <button id="show-all-btn">Show All</button>
+            </div>
+            <div class="products">
+                <% products.forEach(product => { %>
+                    <div class="product-card">
+                        <img src="<%= product.photo %>" alt="<%= product.name %>" style="height: 300px; width: 300px;">
+                        <h3><%= product.name %></h3>
+                        <p><%= product.description %></p>
+                        <p id="cost">Цена: $<%= product.price %></p>
+                        <% if (user) { %>
+                            <button class="add-to-cart-button" data-product-id="<%= product.id %>">Добавить в корзину</button>
+                        <% } %>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

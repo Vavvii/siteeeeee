@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/shop">Главная</a></li>
+                <% if (user) { %>
+                    <li><a href="/admin">Admin Panel</a></li>
+                    <li><a href="/logout">Выход</a></li>
+                <% } else { %>
+                    <li><a href="/login">Войти</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="admin-menu">
+            <h2>Admin Menu</h2>
+            <ul>
+                <li><button id="add-info">Add Information</button></li>
+                <li><button id="edit-info">Edit Information</button></li>
+                <li><button id="delete-info">Delete Information</button></li>
+                <li><button id="view-feedback">Просмотр обратной информации</button></li>
+                
+            </ul>
+        </section>
+        <section id="admin-content">
+        
+        </section>
+    </main>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
